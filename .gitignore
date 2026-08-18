@@ -1,0 +1,33 @@
+# Environment variables 
+.env
+backend/.env
+frontend/.env
+*.env
+
+# Python Virtual Environments
+.venv/
+venv/
+env/
+backend/.venv/
+backend/venv/
+
+# Python Cache & Bytecode
+__pycache__/
+backend/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Local Storage / Dynamic Run Jobs
+backend/jobs/
+jobs/
+*.csv
+*.xlsx
+*.xls
+!backend/schema/*.csv
+
+# Operating System & IDE junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Catalog Enrichment Console</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="shell">
+
+  <div class="topbar">
+    <div class="mark">
+      <span class="dot"></span>
+      <h1>Catalog Enrichment Console</h1>
+    </div>
+    <div class="rev">PIPELINE v1.0 &middot; RESOURCE&nbsp;FINDER&nbsp;&rarr;&nbsp;EXTRACTION&nbsp;&rarr;&nbsp;NORMALISER&nbsp;&rarr;&nbsp;OUTPUT</div>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Batch product-spec enrichment</div>
+    <h2>Turn a sheet of part numbers into a verified, source-cited catalog file.</h2>
+    <p>
+      Upload a spreadsheet of products. Each row is run through the sourcing,
+      extraction, normalisation and audit agents in sequence &mdash; live results,
+      citations and conflicting values appear below as they finish.
+    </p>
+    <div class="flow-strip">
+      <span class="step">01 Resource Finder</span><span class="arrow">&rarr;</span>
+      <span class="step">02 Extraction</span><span class="arrow">&rarr;</span>
+      <span class="step">03 Normaliser / Auditor</span><span class="arrow">&rarr;</span>
+      <span class="step">04 Output Formatter</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="upload-zone" id="dropZone">
+      <div class="icon">&#9633;</div>
+      <h3>Drop your product sheet here</h3>
+      <p>.xlsx, .xls or .csv &middot; or <span class="browse">browse files</span></p>
+      <input type="file" id="fileInput" accept=".xlsx,.xls,.csv" />
+    </div>
+
+    <div class="file-chip" id="fileChip">
+      <span class="name" id="fileName">&mdash;</span>
+      <span id="fileRows"></span>
+      <button class="clear" id="clearFile" title="Remove file">&times;</button>
+    </div>
+
+    <button class="run-btn" id="runBtn" disabled>Run enrichment pipeline</button>
+    <div class="error-banner" id="errorBanner"></div>
+
+    <div id="progressSection">
+      <div class="progress-head">
+        <span class="label">Processing rows</span>
+        <span class="count"><span id="progIndex">0</span> / <span id="progTotal">0</span></span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-stats">
+        <span class="ok">Verified: <b id="statOk">0</b></span>
+        <span class="fail">Failed: <b id="statFail">0</b></span>
+        <span>Sources reviewed: <b id="statSources">0</b></span>
+      </div>
+
+      <div class="download-bar" id="downloadBar">
+        <div class="msg">
+          Merged catalog file is ready.
+          <span id="downloadSummary"></span>
+        </div>
+        <a class="download-btn" id="downloadBtn" href="#" download>Download CSV</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="resultsSection">
+    <div class="results-head">
+      <h3>Product-by-product results</h3>
+    </div>
+    <div class="results-list" id="resultsList"></div>
+  </div>
+
+  <footer class="foot">
+    <span>Backend: FastAPI + SSE</span>
+    <span>Source-verified against target MPN before any value is trusted</span>
+  </footer>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+Put your 252-column "Unihack_ Expected Output - Delivery Format.csv"
+file in this folder, named exactly:
+
+    Unihack_ Expected Output - Delivery Format.csv
+
+The Output agent reads only the header row of this file to know which
+252 columns the final merged catalog file must contain, in what order.
+
+If you'd rather keep it somewhere else, set EXPECTED_OUTPUT_FILE in
+backend/.env to the absolute path of the file instead.
