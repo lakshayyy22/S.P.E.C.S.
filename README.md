@@ -383,17 +383,17 @@ This prevents spreadsheet software from incorrectly interpreting fractions as da
 ### AI
 
 * **Groq**
-* **Llama-3.3-70B**
+* **GPT-OSS-20B**
 
 ### Search
 
 * **Tavily Search API**
-* Web APIs
+* Automated WEB Crawling and Domain Filtering
 
 ### Web Extraction
 
 * **Requests**
-* **BeautifulSoup4**
+* **In-memory Stream Extraction(BYtesIO)**
 
 ### Document Extraction
 
@@ -401,11 +401,27 @@ This prevents spreadsheet software from incorrectly interpreting fractions as da
 
 ### Frontend 
 
-TO be added
+* Vanilla JavaScript(ES6+)
+
+* HTML5 and CSS3
+
+* HTML5 Drag-and-Drop aand File API
+
+* EventSource API
 
 ### Backend
 
-To Be Added
+* Python 3.10+
+
+* **FastAPI** (Async REST API Framework)
+
+* **Uvicorn** (High-performance ASGI Server)
+
+* Server-Sent Events (SSE) (via FastAPI StreamingResponse for live job progress)
+
+* Pandas & OpenPyXL (Batch CSV/Excel ingestion, structured attribute mapping, and schema formatting)
+
+* Python-dotenv (Environment variable & API key management)
 
 # 🎯 Key Benefits
 
