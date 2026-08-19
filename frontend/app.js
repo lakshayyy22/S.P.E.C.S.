@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const API_BASE = window.CATALOG_API_BASE || "http://localhost:8000";
+  const API_BASE = window.CATALOG_API_BASE || "https://specs-production-46dd.up.railway.app";
 
   const dropZone = document.getElementById("dropZone");
   const fileInput = document.getElementById("fileInput");
